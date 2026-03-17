@@ -30,3 +30,15 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+.load-button {
+  display: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+}
+.load-button.active {
+  display: block;
+}

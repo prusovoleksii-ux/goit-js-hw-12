@@ -3,6 +3,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const modal = document.querySelector('div.modal');
 const gallery = document.querySelector('ul.gallery');
+const loadMoreButton = document.querySelector('.load-button');
 
 
 export const showLoader = () => {
@@ -10,6 +11,13 @@ export const showLoader = () => {
 }
 export const hideLoader = () => {
     modal.classList.remove("active");
+}
+
+export const showLoadMoreButton = () => {
+    loadMoreButton.classList.add("active");
+}
+export const hideLoadMoreButton = () => {
+    loadMoreButton.classList.remove("active");
 }
 
 export const createGallery = images => {
@@ -42,7 +50,7 @@ export const createGallery = images => {
                                     </li>`)
                         .join("");
     let lightbox = new SimpleLightbox('.gallery a', {captionsData: "alt"});
-    gallery.innerHTML = markup;
+    gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
 }
 
