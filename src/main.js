@@ -59,10 +59,10 @@ form.addEventListener("submit", async e => {
 });
 
 loadMoreButton.addEventListener("click", async e => {
-    hideLoadMoreButton();
     showLoader();
     page += 1;
     try {
+        hideLoadMoreButton();
         const res = await getImagesByQuery(query, page)
         createGallery(res.hits);
         scroll();
