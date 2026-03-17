@@ -5,6 +5,8 @@ const modal = document.querySelector('div.modal');
 const gallery = document.querySelector('ul.gallery');
 const loadMoreButton = document.querySelector('.load-button');
 
+const lightbox = new SimpleLightbox('.gallery a', {captionsData: "alt"});
+
 
 export const showLoader = () => {
     modal.classList.add("active");
@@ -49,12 +51,11 @@ export const createGallery = images => {
                                         </a>
                                     </li>`)
                         .join("");
-    let lightbox = new SimpleLightbox('.gallery a', {captionsData: "alt"});
     gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
 }
 
-export const clearGallery = (lightbox) => {
+export const clearGallery = () => {
     gallery.innerHTML = '';
 }
 
